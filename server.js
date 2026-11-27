@@ -1,7 +1,7 @@
 const WebSocket = require("ws");
 
-const server = new WebSocket.Server({ port: 8080 });
-
+const PORT = process.env.PORT || 8080;
+const server = new WebSocket.Server({ port: PORT, host: "0.0.0.0" });
 console.log("Smart Rescue relay started on port 8080");
 
 server.on("connection", (socket) => {
